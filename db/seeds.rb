@@ -1,9 +1,5 @@
 team = Team.create(name: 'Test Team')
 user = User.create(first_name: 'John', last_name: 'Smith', email: 'a@b.com', password: 'password', team: team)
-#Added new users to test projects beteween users
-user_2 = User.create(first_name: 'Jesus1', last_name: 'F', email: 'j1@b.com', password: 'password', team: team)
-user_3 = User.create(first_name: 'Jesus2', last_name: 'F', email: 'j2@b.com', password: 'password', team: team)
-
 team = Team.create(id: 2, name: 'Foo bar team', api_key: 'fd123aaa')
 project = Project.create(public_key: '12312cacadsasadas11', title: 'SomeProject', team: team)
 category = Category.create!(title: 'SomeCat', project: project)

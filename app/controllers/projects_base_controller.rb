@@ -12,12 +12,4 @@ class ProjectsBaseController < ApplicationController
     flash[:error] = 'Sorry, you don\'t have access'
     redirect_to root_path
   end
-
-  #The fucntion assing an user to the current project.
-  #@params(project, user_id)
-  def assing_permissions(project, id)
-    ProjectUser.create(project: project, user_id: id)
-  end
-
-
 end
