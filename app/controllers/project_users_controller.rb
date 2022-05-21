@@ -5,7 +5,11 @@ class ProjectUsersController < ProjectsBaseController
   end
 
   def create
-    ProjectUser.create(project: @current_project, user_id: params[:user_id])
+    #assing_permissions extends from ProjecBaseController
+    #We assign an user to the current project
+    #@params(current_project, user_id)
+    assing_permissions(@current_project, params[:user_id])
+    #ProjectUser.create(project: @current_project, user_id: params[:user_id])
     redirect_back(fallback_location: root_path)
   end
 
