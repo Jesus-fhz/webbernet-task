@@ -23,7 +23,9 @@ class ProjectsController < ProjectsBaseController
       team: current_user.team,
       public_feed: params[:visibility] == 'Public'
     )
-
+    #We assign current user to project unless !Project
+    #No other user will have access to the project. But you can add new users after.
+    assing_permissions(project, current_user.id) unless !project
     flash[:success] = 'Project created'
     return redirect_to dashboard_path
   end
