@@ -13,7 +13,7 @@ class ProjectsBaseController < ApplicationController
     redirect_to root_path
   end
 
-  #Function to assing users to projects
+  #The fucntion assing an user to the current project.
   #@params(project, user_id)
   def assing_permissions(project, id)
     ProjectUser.create(project: project, user_id: id)
